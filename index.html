@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulado WhatsApp Business</title>
+  <link rel="icon" type="image/webp" href="assets/icone.webp">
+  <link rel="apple-touch-icon" href="assets/icone.webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo__conteudo">
+      <h1>Simulado – WhatsApp for Business Technical Implementation</h1>
+      <p class="topo__sub">30 questões do teste prático da Meta, traduzidas e com explicação de cada resposta.</p>
+      <div class="topo__links">
+        <a class="btn btn--topo" href="https://www.facebook.com/business/learn/business-education-program/whatsapp-for-business-technical-implementation#jumplink-module" target="_blank" rel="noopener noreferrer">Documentação oficial</a>
+        <a class="btn btn--topo btn--topo-destaque" href="https://www.facebook.com/business/learn/business-education-program/whatsapp-for-business-technical-implementation#" target="_blank" rel="noopener noreferrer">Registrar no exame</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Tela inicial -->
+    <section id="tela-inicio" class="cartao">
+      <h2>Como funciona</h2>
+      <ul class="lista">
+        <li>São <strong>30 questões</strong>. Algumas pedem <strong>duas respostas</strong>: o enunciado avisa.</li>
+        <li>A questão de múltipla resposta só conta ponto se você marcar <strong>todas as corretas</strong>, como na prova da Meta.</li>
+        <li>Ao finalizar, você vê a nota, o gabarito e a explicação de cada questão.</li>
+        <li>Depois dá para refazer tudo ou só as que errou.</li>
+      </ul>
+      <label class="opcao-config">
+        <input type="checkbox" id="cfg-embaralhar" checked>
+        Embaralhar a ordem das questões e das alternativas
+      </label>
+      <p id="melhor-nota" class="melhor-nota" hidden></p>
+      <button id="btn-comecar" class="btn btn--primario">Começar simulado</button>
+    </section>
+
+    <!-- Quiz -->
+    <section id="tela-quiz" hidden>
+      <div class="barra-progresso" aria-hidden="true"><div id="progresso" class="barra-progresso__fill"></div></div>
+      <p id="contador" class="contador"></p>
+      <form id="form-quiz" novalidate></form>
+      <div class="acoes acoes--fixo">
+        <span id="resumo-respondidas" class="resumo-respondidas"></span>
+        <button id="btn-finalizar" class="btn btn--primario" type="button">Finalizar</button>
+      </div>
+    </section>
+
+    <!-- Resultado -->
+    <section id="tela-resultado" hidden>
+      <div class="cartao resultado">
+        <div id="nota-circulo" class="nota-circulo"><span id="nota-percentual">0%</span></div>
+        <div>
+          <h2 id="nota-titulo">Resultado</h2>
+          <p id="nota-texto" class="nota-texto"></p>
+          <div class="acoes">
+            <button id="btn-refazer" class="btn btn--primario" type="button">Refazer tudo</button>
+            <button id="btn-refazer-erradas" class="btn btn--secundario" type="button">Refazer só as erradas</button>
+          </div>
+        </div>
+      </div>
+      <div class="filtros">
+        <button class="filtro filtro--ativo" data-filtro="todas" type="button">Todas</button>
+        <button class="filtro" data-filtro="erradas" type="button">Só as erradas</button>
+        <button class="filtro" data-filtro="certas" type="button">Só as certas</button>
+      </div>
+      <div id="revisao"></div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    Conteúdo baseado no Practice Test oficial da Meta Blueprint. Tradução e explicações não são oficiais.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
