@@ -12,22 +12,53 @@
   <header class="topo">
     <div class="topo__conteudo">
       <h1>Simulado – WhatsApp for Business Technical Implementation</h1>
-      <p class="topo__sub">30 questões do teste prático da Meta, traduzidas e com explicação de cada resposta.</p>
+      <p class="topo__sub">Questões do teste prático e dos cursos da Meta, traduzidas e com explicação de cada resposta.</p>
       <div class="topo__links">
         <a class="btn btn--topo" href="https://www.facebook.com/business/learn/business-education-program/whatsapp-for-business-technical-implementation#jumplink-module" target="_blank" rel="noopener noreferrer">Documentação oficial</a>
         <a class="btn btn--topo btn--topo-destaque" href="https://www.facebook.com/business/learn/business-education-program/whatsapp-for-business-technical-implementation#" target="_blank" rel="noopener noreferrer">Registrar no exame</a>
       </div>
     </div>
+    <nav class="abas" aria-label="Seções do site">
+      <div class="abas__conteudo">
+        <a class="aba aba--ativa" href="index.html" aria-current="page">Simulado</a>
+        <a class="aba" href="material.html">Material de Estudos</a>
+      </div>
+    </nav>
   </header>
 
   <main class="container">
     <!-- Tela inicial -->
     <section id="tela-inicio" class="cartao">
+      <h2>Escolha o simulado</h2>
+      <div class="modos">
+        <label class="modo">
+          <input type="radio" name="modo" value="prova" checked>
+          <span>
+            <strong>Prova prática oficial</strong> · <span data-qtd="prova"></span> questões
+            <small>As mesmas questões do Practice Test da Meta Blueprint.</small>
+          </span>
+        </label>
+        <label class="modo">
+          <input type="radio" name="modo" value="kc">
+          <span>
+            <strong>Knowledge checks dos cursos</strong> · <span data-qtd="kc"></span> questões
+            <small>Os testes do fim de cada lição dos cursos oficiais.</small>
+          </span>
+        </label>
+        <label class="modo">
+          <input type="radio" name="modo" value="tudo">
+          <span>
+            <strong>Tudo junto</strong> · <span data-qtd="tudo"></span> questões
+            <small>Prova prática + knowledge checks.</small>
+          </span>
+        </label>
+      </div>
+
       <h2>Como funciona</h2>
       <ul class="lista">
-        <li>São <strong>30 questões</strong>. Algumas pedem <strong>duas respostas</strong>: o enunciado avisa.</li>
+        <li>Algumas questões pedem <strong>duas respostas</strong>: o enunciado avisa.</li>
         <li>A questão de múltipla resposta só conta ponto se você marcar <strong>todas as corretas</strong>, como na prova da Meta.</li>
-        <li>Ao finalizar, você vê a nota, o gabarito e a explicação de cada questão.</li>
+        <li>Ao finalizar, você vê a nota, o gabarito, a explicação e o link da lição oficial de cada questão.</li>
         <li>Depois dá para refazer tudo ou só as que errou.</li>
       </ul>
       <label class="opcao-config">
@@ -59,6 +90,7 @@
           <div class="acoes">
             <button id="btn-refazer" class="btn btn--primario" type="button">Refazer tudo</button>
             <button id="btn-refazer-erradas" class="btn btn--secundario" type="button">Refazer só as erradas</button>
+            <button id="btn-voltar-inicio" class="btn btn--secundario" type="button">Trocar de simulado</button>
           </div>
         </div>
       </div>
@@ -72,9 +104,11 @@
   </main>
 
   <footer class="rodape">
-    Conteúdo baseado no Practice Test oficial da Meta Blueprint. Tradução e explicações não são oficiais.
+    Projeto não oficial e sem fins lucrativos. Conteúdo baseado no Practice Test e nos cursos da Meta Blueprint; tradução e explicações não são oficiais.
   </footer>
 
+  <script src="dados/prova-pratica.js"></script>
+  <script src="dados/knowledge-checks.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

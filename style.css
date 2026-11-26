@@ -171,3 +171,80 @@ fieldset.questao > legend + * { clear: both; }
   .resultado { flex-direction: column; text-align: center; }
   .resultado .acoes { justify-content: center; }
 }
+
+/* =================== Abas de navegação =================== */
+.topo { padding-bottom: 0; }
+.abas { margin-top: 20px; }
+.abas__conteudo { max-width: 860px; margin: 0 auto; display: flex; gap: 4px; }
+.aba {
+  color: #fff; text-decoration: none; font-weight: 600;
+  padding: 10px 18px; border-radius: 10px 10px 0 0;
+  background: rgba(255, 255, 255, 0.12);
+}
+.aba:hover { background: rgba(255, 255, 255, 0.22); }
+.aba--ativa, .aba--ativa:hover { background: var(--fundo); color: var(--verde-escuro); }
+
+/* =================== Escolha do modo =================== */
+.modos { display: grid; gap: 10px; margin: 8px 0 24px; }
+.modo {
+  display: flex; gap: 12px; align-items: flex-start; cursor: pointer;
+  border: 1px solid var(--borda); border-radius: 10px; padding: 12px 14px;
+}
+.modo:hover { border-color: var(--verde); }
+.modo input { margin-top: 5px; accent-color: var(--verde); }
+.modo:has(input:checked) { border-color: var(--verde); background: var(--verde-claro); }
+.modo small { display: block; color: var(--texto-suave); }
+
+/* =================== Origem e fontes =================== */
+.origem {
+  display: inline-block; font-size: 0.75rem; font-weight: 600;
+  padding: 2px 10px; border-radius: 999px; margin: 6px 0 2px;
+  background: #eef2f4; color: var(--texto-suave);
+}
+.origem--kc { background: #fff4e0; color: #8a5a00; }
+.fontes { margin-top: 10px; }
+.fontes ul { margin: 4px 0 0; padding-left: 20px; }
+.fontes a { color: var(--verde-escuro); font-weight: 600; }
+
+/* =================== Material de Estudos =================== */
+.material { max-width: 1180px; display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
+.material__menu {
+  position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow-y: auto;
+  background: var(--cartao); border: 1px solid var(--borda); border-radius: 12px; padding: 16px;
+}
+.material__busca {
+  width: 100%; padding: 9px 12px; border: 1px solid var(--borda); border-radius: 8px;
+  font-size: 0.95rem; margin-bottom: 12px;
+}
+.material__busca:focus { outline: 2px solid var(--verde); border-color: var(--verde); }
+.menu-curso { margin-bottom: 12px; }
+.menu-curso__titulo { font-size: 0.85rem; font-weight: 700; color: var(--verde-escuro); margin: 0 0 4px; }
+.menu-curso ul { list-style: none; margin: 0; padding: 0; }
+.menu-curso a {
+  display: block; padding: 5px 8px; border-radius: 6px; font-size: 0.9rem;
+  color: var(--texto); text-decoration: none;
+}
+.menu-curso a:hover { background: var(--verde-claro); }
+.menu-curso a.ativo { background: var(--verde); color: #fff; }
+.material__conteudo { min-width: 0; }
+.curso-bloco { margin-bottom: 32px; }
+.curso-bloco > h2 { color: var(--verde-escuro); margin: 0 0 12px; }
+.licao { margin-bottom: 16px; scroll-margin-top: 16px; }
+.licao h3 { margin: 0 0 4px; font-size: 1.2rem; }
+.licao__link { font-size: 0.9rem; color: var(--verde-escuro); font-weight: 600; }
+.licao__texto { margin-top: 12px; }
+.licao__texto h4 { margin: 20px 0 6px; color: var(--verde-escuro); }
+.licao__texto table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.92rem; display: block; overflow-x: auto; }
+.licao__texto th, .licao__texto td { border: 1px solid var(--borda); padding: 6px 10px; text-align: left; vertical-align: top; }
+.licao__texto th { background: var(--verde-claro); }
+.licao__texto code { background: #eef2f4; padding: 1px 5px; border-radius: 4px; font-size: 0.88em; word-break: break-word; }
+.licao__texto pre { background: #0f1e24; color: #d6f5ec; padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; }
+.licao__texto pre code { background: none; padding: 0; color: inherit; }
+.licao__quiz { margin-top: 14px; font-size: 0.9rem; color: var(--texto-suave); }
+.licao--oculta { display: none; }
+.material__vazio { color: var(--texto-suave); }
+
+@media (max-width: 860px) {
+  .material { grid-template-columns: 1fr; }
+  .material__menu { position: static; max-height: none; }
+}
